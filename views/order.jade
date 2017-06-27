@@ -72,10 +72,16 @@ html( lang="en" )
                         div.col-lg-4
                             input#inputPostcode.form-control(type="text", placeholder="Postcode", name="inputPostcode")
 
+                    //form drop-down section
+                    div.form-group
+                        label.col-lg2.control-label(for="select") Service Required
+                        div.col-lg-4
+                            select.form-control#select(name="orderType")
+                                option Mini DV to MPEG-4 conversion
+                                option VHS to MPEG-4 conversion
+                                option Mini DV to DVD
 
-
-
-
-
-                    //button#btnSubmit(type="submit") submit
+                    div.form-group
+                        div.col-lg-10
+                            button#btnSubmit.btn.btn-primary(type="submit") Submit
 include footer
