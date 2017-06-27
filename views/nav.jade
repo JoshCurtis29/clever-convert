@@ -1,0 +1,11 @@
+div
+    center   
+        img(src="./images/dailydinners-logo.jpg").img-rounded.img-responsive
+        p
+        .container
+            +nav("", "dropdown_menu", "inverse")
+                +nav_item( "/", "active") Home
+                +nav_item( "/services" ) Services
+                +nav_item( "/about" ) About Us
+                +nav_item( "/order" ) Order
+                

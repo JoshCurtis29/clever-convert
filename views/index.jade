@@ -1,54 +1,25 @@
-extends layout
+include mixins
+doctype
+html( lang="en" )
+    include head
+    body(style="padding-bottom:10rem;")
+    include nav
+    .container
+      block content
+        .jumbotron
+            h1 Welcome to Clever Convert
+            p Here you can find the cheapest and easiest way to convert old tapes, to new.
+            p: +button("info", "/recipelist?page=1", "large") Find Out More
+        .row
+            .col-md-4.col-sm-6.col-xs-12
+                +panel("Mini DV Conversion", "info")
+                  div.imagewrapper
+                    img(src="./images/mini-dv.jpg").img-rounded.img-responsive.panel-image 
+            .col-md-8.col-sm-4.col-xs-12
+                +panel("Professional Lab", "info")
+                  div.imagewrapper
+                    img(src="./images/studio.jpg").img-rounded.img-responsive.panel-image 
+                    
+                    p This is our shiny studio where the magic happens
+                   
 
-block content
-    h1= title
-    p Welcome to our test
-
-    // Wrapper
-    #wrapper
-
-        // USER INFO
-        #userInfo
-            h2 User Info
-            p
-                strong Name:
-                |  <span id='userInfoName'></span>
-                br
-                strong Age:
-                |  <span id='userInfoAge'></span>
-                br
-                strong Gender:
-                |  <span id='userInfoGender'></span>
-                br
-                strong Location:
-                |  <span id='userInfoLocation'></span>
-        // /USER INFO
-
-        // USER LIST
-        h2 User List
-        #userList
-            table
-                thead
-                    th UserName
-                    th Email
-                    th Delete?
-                tbody
-        // /USER LIST
-
-        // ADD USER
-        h2 Add User
-        #addUser
-            fieldset
-                input#inputUserName(type='text', placeholder='Username')
-                input#inputUserEmail(type='text', placeholder='Email')
-                br
-                input#inputUserFullname(type='text', placeholder='Full Name')
-                input#inputUserAge(type='text', placeholder='Age')
-                br
-                input#inputUserLocation(type='text', placeholder='Location')
-                input#inputUserGender(type='text', placeholder='gender')
-                br
-                button#btnAddUser Add User
-        // /ADD USER
-
-    // /WRAPPER

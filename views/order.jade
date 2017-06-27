@@ -1,0 +1,81 @@
+include mixins
+doctype
+html( lang="en" )
+    include head
+    body(style="padding-bottom:10rem;")
+    include nav
+    .container
+      block content
+        .jumbotron
+            h1 Order Form
+            p Simply complete the order form below and we will get in touch with you soon to process your film.
+
+        .row
+            form.form-horizontal#formAddOrder(name="addorder",method="post",action="/addorder")
+                fieldset
+                    legend Complete details below:
+                    
+
+                    //form element section        
+                    div.form-group
+                        label.col-lg2.control-label(for="inputFirstName") First Name
+                        div.col-lg-4
+                            input#inputForename.form-control(type="text", placeholder="Forename", name="inputForename")
+
+
+
+                    //form element section        
+                    div.form-group
+                        label.col-lg2.control-label(for="inputSurname") Surname
+                        div.col-lg-4
+                            input#inputSurame.form-control(type="text", placeholder="Surname", name="inputSurname")
+
+                    //form element section
+                    div.form-group
+                        label.col-lg2.control-label(for="inputEmail") Email
+                        div.col-lg-4
+                            input#inputEmail.form-control(type="text", placeholder="Email", name="inputEmail")
+
+                    //form element section        
+                    div.form-group
+                        label.col-lg2.control-label(for="inputPhoneNumber") Phone Number
+                        div.col-lg-4
+                            input#inputPhoneNumber.form-control(type="text", placeholder="Phone Number", name="inputPhoneNumber")
+
+                    //form element section        
+                    div.form-group
+                        label.col-lg2.control-label(for="inputAddressLine1") Address line 1
+                        div.col-lg-4
+                            input#inputAddressLine1.form-control(type="text", placeholder="Address Line 1", name="inputAddressLine1")
+
+                    //form element section        
+                    div.form-group
+                        label.col-lg2.control-label(for="inputAddressLine2") Address line 2
+                        div.col-lg-4
+                            input#inputAddressLine2.form-control(type="text", placeholder="Address Line 2", name="inputAddressLine2")
+
+                    //form element section        
+                    div.form-group
+                        label.col-lg2.control-label(for="inputTown") Town
+                        div.col-lg-4
+                            input#inputTown.form-control(type="text", placeholder="Town", name="inputTown")
+
+                    //form element section        
+                    div.form-group
+                        label.col-lg2.control-label(for="inputCounty") County
+                        div.col-lg-4
+                            input#inputCounty.form-control(type="text", placeholder="County", name="inputCounty")
+
+                    //form element section        
+                    div.form-group
+                        label.col-lg2.control-label(for="inputPostcode") Postcode
+                        div.col-lg-4
+                            input#inputPostcode.form-control(type="text", placeholder="Postcode", name="inputPostcode")
+
+
+
+
+
+
+                    //button#btnSubmit(type="submit") submit
+include footer
