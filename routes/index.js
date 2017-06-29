@@ -11,13 +11,28 @@ router.get('/order', function(req, res, next) {
 });
 
 router.get('/ordercomplete', function(req, res, next) {
-  res.render('ordercomplete', { title: 'Order Complete' });
+    var tapeNumber = req.query.tapes;
+    var custEmail = req.query.email;
+    var totalcost = tapeNumber * 4.99;
+    console.log('email wot I search:' + custEmail);
+    var db = req.db;
+    var collection = db.get('orderlist');
+
+    collection.find({"email" : "michael@unomee.com"},{ limit : 1 },function(e,docs){
+        console.log('stuff wot we get back: ' + docs);
+        res.render('ordercomplete', {
+            "orderDetails" : docs, cost:totalcost
+        });
+    });
 });
 
 router.get('/aboutus', function(req, res, next) {
   res.render('aboutus', { title: 'About Us' });
 });
 
+router.get('/services', function(req, res, next) {
+  res.render('services', { title: 'About Us' });
+});
 /* POST to Add order Service */
 router.post('/addorder', function(req, res) {
 
@@ -34,7 +49,7 @@ router.post('/addorder', function(req, res) {
     var orderTown = req.body.inputTown;
     var orderCounty = req.body.inputCounty;
     var orderPostcode = req.body.inputPostcode;
-    var orderServiceRequired = req.body.orderType;
+    var orderNumberOfTapes = req.body.inputNumberOfTapes;
    
 
     // Set our collection
@@ -51,7 +66,7 @@ router.post('/addorder', function(req, res) {
         "town" : orderTown,
         "county" : orderCounty,
         "postcode" : orderPostcode,
-        "service" : orderServiceRequired
+        "service" : orderNumberOfTapes
 
     }, function (err, doc) {
         if (err) {
@@ -60,7 +75,7 @@ router.post('/addorder', function(req, res) {
         }
         else {
             // And forward to success page
-            res.redirect("ordercomplete");
+            res.redirect("ordercomplete?email= " + orderEmail + "&" + "tapes=" + orderNumberOfTapes);
         }
     });
 });

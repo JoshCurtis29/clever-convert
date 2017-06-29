@@ -9,4 +9,25 @@ html( lang="en" )
         .jumbotron
             h1 Thank you for your order!
             p We will be in touch soon
+        .row
+            .col-md-6.col-sm-12.col-xs-12
+                div.list-group
+                    each order, i in orderDetails
+                        table.table.table-striped.table-hover
+                           thead
+                              tr
+                                 th Field
+                                 th Value
+                           tbody
+                              tr
+                                 td First name:
+                                 td #{order.forename}
+                              tr
+                                 td Last name:
+                                 td #{order.surname}
+
+                        p Your order will cost you £#{cost}
+                        p Your name is #{order.forename}
+                        p Your surname is #{order.surname}
+                        p yo Mum!
 

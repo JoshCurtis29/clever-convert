@@ -1,0 +1,29 @@
+include mixins
+doctype
+html( lang="en" )
+    include head
+    body(style="padding-bottom:10rem;")
+    include nav
+    .container
+      block content
+        .jumbotron.services-banner
+            h1 
+                span Services We Provide
+            p 
+                span Here you can find the cheapest and easiest way to convert old tapes, to new.
+            p: +button("default", "/aboutus", "large") Find Out More
+        .row
+            
+            .col-md-6.col-sm4.col-xs-12
+                hr
+                h3 Everyone has old home movies, photos and other media, and at some point, they will start to deteriorate until they are no longer available.
+                hr
+                h3 i love my Mum
+
+            .col-md-6.col-sm-4.col-xs-12
+                hr
+                img.old-tapes(src="./images/old-tapes.jpg" alt="Image Title")
+
+                
+                    
+                    

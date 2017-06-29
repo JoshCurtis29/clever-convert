@@ -7,8 +7,10 @@ html( lang="en" )
     .container
       block content
         .jumbotron.order-banner
-            h1 Order Form
-            p Simply complete the order form below and we will get in touch with you soon to process your film.
+            h1
+                span Order Form
+            p 
+                span Simply complete the form below and we will get in touch with you soon to process your film.
 
         .row
             form.form-horizontal#formAddOrder(name="addorder",method="post",action="/addorder")
@@ -72,16 +74,17 @@ html( lang="en" )
                         div.col-lg-4
                             input#inputPostcode.form-control(type="text", placeholder="Postcode", name="inputPostcode")
 
-                    //form drop-down section
+                    //form element section
                     div.form-group
-                        label.col-lg2.control-label(for="select") Service Required
+                        label.col-lg2.control-label(for="inputNumberOfTapes") Number Of Tapes
                         div.col-lg-4
-                            select.form-control#select(name="orderType")
-                                option Mini DV to MPEG-4 conversion
-                                option VHS to MPEG-4 conversion
-                                option Mini DV to DVD
+                            input#inputServiceRequired.form-control(type="text", placeholder="Number Of Tapes", name="inputNumberOfTapes")
 
                     div.form-group
                         div.col-lg-10
                             button#btnSubmit.btn.btn-primary(type="submit") Submit
+                        .progress
+  .progress-bar(style='width: 60%;')
+
+
 include footer
