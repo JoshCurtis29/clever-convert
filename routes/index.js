@@ -14,6 +14,10 @@ router.get('/ordercomplete', function(req, res, next) {
   res.render('ordercomplete', { title: 'Order Complete' });
 });
 
+router.get('/aboutus', function(req, res, next) {
+  res.render('aboutus', { title: 'About Us' });
+});
+
 /* POST to Add order Service */
 router.post('/addorder', function(req, res) {
 

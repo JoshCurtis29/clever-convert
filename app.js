@@ -7,7 +7,16 @@ var bodyParser = require('body-parser');
 // Database
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('localhost:27017/cleverconvert');
+var url = process.env.MONGOLAB_URI;
+
+if (url == null){
+    url = 'localhost:27017/cleverconvert';
+}
+
+//var db = monk('mongodb://heroku_n6tkc1zm:pcif411lc8v9sf1jdag1aogkmg@ds149511.mlab.com:49511/heroku_n6tkc1zm');
+var db = monk(url);
+
+//var db = monk('localhost:27017/cleverconvert');
 
 var index = require('./routes/index');
 var users = require('./routes/users');

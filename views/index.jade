@@ -6,20 +6,31 @@ html( lang="en" )
     include nav
     .container
       block content
-        .jumbotron
-            h1 Welcome to Clever Convert
-            p Here you can find the cheapest and easiest way to convert old tapes, to new.
-            p: +button("info", "/recipelist?page=1", "large") Find Out More
+        .jumbotron.home-banner
+            h1 
+                span Welcome to Clever Convert
+            p 
+                span Here you can find the cheapest and easiest way to convert old tapes, to new.
+            p: +button("default", "/aboutus", "large") Find Out More
         .row
-            .col-md-4.col-sm-6.col-xs-12
-                +panel("Mini DV Conversion", "info")
+            
+            .col-md-6.col-sm4.col-xs-12
+                +panel("About Us", "info")
                   div.imagewrapper
-                    img(src="./images/mini-dv.jpg").img-rounded.img-responsive.panel-image 
-            .col-md-8.col-sm-4.col-xs-12
-                +panel("Professional Lab", "info")
+                  p We are some sick place that provides the cheapest and easiest way to turn your old media, into new. Cine films and VHS tapes deteriorate over time, not to mention equipment for such movies are becoming extinct so if you have old videos and cine film of family weddings, birthdays and anniversaries lying around the house, keep them safe by converting them into modern media such as DVD or USB.
+                     
+            .col-md-6.col-sm-4.col-xs-12
+                div.list-group
+                    a(href='#').list-group-item.active Price List
+                    a(href='#').list-group-item Cost per hour: £5.00
+                    a(href='#').list-group-item Bulk discount: £4.00 per hr over 10 hrs
+              
+            .col-md-12.col-sm4.col-xs-6
+                +panel("FAQ", "info")
                   div.imagewrapper
-                    img(src="./images/studio.jpg").img-rounded.img-responsive.panel-image 
+                  p We are some sick place that provides the cheapest and easiest way to turn your old media, into new. Cine films and VHS tapes deteriorate over time, not to mention equipment for such movies are becoming extinct so if you have old videos and cine film of family weddings, birthdays and anniversaries lying around the house, keep them safe by converting them into modern media such as DVD or USB.
                     
-                    p This is our shiny studio where the magic happens
+                    
+
                    
 
